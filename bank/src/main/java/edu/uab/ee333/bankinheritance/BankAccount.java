@@ -4,8 +4,8 @@ package edu.uab.ee333.bankinheritance;
 public class BankAccount {
 
   // instance variables
-  protected int balance; // in cents
-  protected String name;
+  private int balance; // in cents
+  private String name;
 
   /**
    * Constructor with name, initial balance
