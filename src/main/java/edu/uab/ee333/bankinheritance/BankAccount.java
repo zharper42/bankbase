@@ -4,8 +4,8 @@ package edu.uab.ee333.bankinheritance;
 public class BankAccount {
 
   // instance variables
-  private int balance; // in cents
-  private String name;
+  protected int balance; // in cents
+  protected String name;
 
   /**
    * Constructor with name, initial balance
@@ -13,7 +13,10 @@ public class BankAccount {
    * @param name name of account
    * @param balance initial amount in cents
    */
-  public BankAccount(String name, int balance) {}
+  public BankAccount(String name, int balance) {
+    this.name = name;
+    this.balance = balance;
+  }
 
   /**
    * getBalance
@@ -21,7 +24,7 @@ public class BankAccount {
    * @return present balance in cents
    */
   public int getBalance() {
-    return 0;
+    return balance;
   }
 
   /**
@@ -29,7 +32,9 @@ public class BankAccount {
    *
    * @param cents amount to add to present balance
    */
-  public void deposit(int cents) {}
+  public void deposit(int cents) {
+    balance += cents;
+  }
 
   /**
    * withdraw remove money from account
@@ -38,7 +43,13 @@ public class BankAccount {
    * @return boolean true if withdrawal is successful
    */
   public boolean withdraw(int cents) {
-    return true;
+
+    if (cents <= balance) {
+      balance -= cents;
+      return true;
+    }
+
+    return false;
   }
 
   /**
@@ -48,7 +59,7 @@ public class BankAccount {
    */
   @Override
   public String toString() {
-    return "";
+    return name + "'s bank account has " + balance + " cents in it at present";
   }
 
   /**
@@ -58,5 +69,23 @@ public class BankAccount {
    */
   public static String getClassAuthor() {
     return "David G. Green";
+  }
+
+  public static void main(String[] args) {
+    BankAccount mine = new BankAccount("David Green", 200000);
+
+    System.out.println("The account has " + mine.getBalance());
+    System.out.println(mine);
+
+    mine.deposit(1000);
+    System.out.println(mine);
+
+    mine.withdraw(200000);
+    System.out.println(mine);
+
+    // trying to remove much
+    boolean status = mine.withdraw(200000);
+    System.out.println(mine);
+    System.out.println("Withdraw returned " + status);
   }
 }
