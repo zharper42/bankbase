@@ -3,8 +3,10 @@ package edu.uab.ee333.bankinheritance;
 /** @author David Green DGreen@uab.edu */
 public class BankAccount {
 
-  // instance variables
-  protected int balance; // in cents
+  /** Present balance in account in cents */
+  protected int balance;
+
+  /** (Formal) Name of owner of account */
   protected String name;
 
   /**
@@ -71,6 +73,11 @@ public class BankAccount {
     return "David G. Green";
   }
 
+  /**
+   * Small program to test this class
+   *
+   * @param args from command line - unused
+   */
   public static void main(String[] args) {
     BankAccount mine = new BankAccount("David Green", 200000);
 

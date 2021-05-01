@@ -1,7 +1,18 @@
 package edu.uab.ee333.bankinheritance;
 
+/**
+ * Model a checking account as a specialization of a bank account
+ *
+ * @author David Green DGreen@uab.edu
+ */
 public class CheckingAccount extends BankAccount {
 
+  /**
+   * Construct a checking account given
+   *
+   * @param name owner
+   * @param balance in cents
+   */
   public CheckingAccount(String name, int balance) {
     super(name, balance);
   }
@@ -32,6 +43,11 @@ public class CheckingAccount extends BankAccount {
     }
   }
 
+  /**
+   * Small program to test this class
+   *
+   * @param args from command line - unused
+   */
   public static void main(String[] args) {
 
     CheckingAccount mine = new CheckingAccount("David Green", 200000);
