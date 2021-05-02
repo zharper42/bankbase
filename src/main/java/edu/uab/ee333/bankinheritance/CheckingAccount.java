@@ -43,6 +43,12 @@ public class CheckingAccount extends BankAccount {
     }
   }
 
+  /** Assess a 150 cent fee each month */
+  @Override
+  public void assessMonthlyFee() {
+    balance -= 150;
+  }
+
   /**
    * Small program to test this class
    *
@@ -60,7 +66,7 @@ public class CheckingAccount extends BankAccount {
     mine.withdraw(200000);
     System.out.println(mine);
 
-    // trying to remove much
+    // trying to remove too much
     boolean status = mine.withdraw(200000);
     System.out.println(mine);
     System.out.println("Withdraw returned " + status);
@@ -69,6 +75,9 @@ public class CheckingAccount extends BankAccount {
     System.out.println(mine);
 
     System.out.println(mine.clearCheck(10000));
+    System.out.println(mine);
+
+    mine.assessMonthlyFee();
     System.out.println(mine);
   }
 }

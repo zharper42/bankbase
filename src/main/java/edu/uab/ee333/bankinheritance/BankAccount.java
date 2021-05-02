@@ -1,7 +1,7 @@
 package edu.uab.ee333.bankinheritance;
 
 /** @author David Green DGreen@uab.edu */
-public class BankAccount {
+public abstract class BankAccount {
 
   /** Present balance in account in cents */
   protected int balance;
@@ -73,26 +73,5 @@ public class BankAccount {
     return "David G. Green";
   }
 
-  /**
-   * Small program to test this class
-   *
-   * @param args from command line - unused
-   */
-  public static void main(String[] args) {
-    BankAccount mine = new BankAccount("David Green", 200000);
-
-    System.out.println("The account has " + mine.getBalance());
-    System.out.println(mine);
-
-    mine.deposit(1000);
-    System.out.println(mine);
-
-    mine.withdraw(200000);
-    System.out.println(mine);
-
-    // trying to remove much
-    boolean status = mine.withdraw(200000);
-    System.out.println(mine);
-    System.out.println("Withdraw returned " + status);
-  }
+  public abstract void assessMonthlyFee();
 }
