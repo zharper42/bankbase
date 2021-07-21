@@ -1,4 +1,12 @@
-# ee333examples
-Starting content and final content of examples for UAB EE333 Course.
+# Bank example
 
-Each example will be in its own folder (and some of those folders may be NetBeans projects.) The `main` branch will be starting point and the `final` branch will be the completed (or more complete) content.
+Starting content and final content of the bank example for UAB EE333 Course.
+
+Each phase will have it's own branch for both start and end.  For example,
+
+  * startInheritance
+  * endInheritance
+
+The phases are
+
+  * Inheritance
