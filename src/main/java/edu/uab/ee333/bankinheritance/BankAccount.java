@@ -1,12 +1,18 @@
 package edu.uab.ee333.bankinheritance;
 
-/** @author David Green DGreen@uab.edu */
+/**
+ * @author David Green DGreen@uab.edu
+ */
 public abstract class BankAccount {
 
-  /** Present balance in account in cents */
+  /**
+   * Present balance in account in cents
+   */
   protected int balance;
 
-  /** (Formal) Name of owner of account */
+  /**
+   * (Formal) Name of owner of account
+   */
   protected String name;
 
   /**
@@ -73,5 +79,8 @@ public abstract class BankAccount {
     return "David G. Green";
   }
 
+  /**
+   * Assess monthly fee on account (not implemented)
+   */
   public abstract void assessMonthlyFee();
 }
